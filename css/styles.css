@@ -29,18 +29,6 @@ carefully. */
     --box-width: 400px;
   }
 }
-@media (orientation: landscape) {
-  :root {
-    --box-three-width: 250px;
-    --box-three-height: 50px;
-  }
-}
-@media (orientation: portrait) {
-  :root {
-    --box-three-width: 50px;
-    --box-three-height: 250px;
-  }
-}
 @media (prefers-color-scheme: dark) {
   :root {
     --box-four-background-color: rgb(65, 65, 65);
@@ -107,10 +95,12 @@ h1 {
 
 .box--three {
   background-color: lightpink;
-  width: var(--box-three-width);
-  height: var(--box-three-height);
-  /* width: 50px;
-  height: 250px; */
+  width: 50px;
+  height: 250px;
+  @media (orientation: landscape) {
+    width: 250px;
+    height: 50px;
+  }
 }
 
 .box--four {
